@@ -1,0 +1,16 @@
+Configuration:
+  status: warn
+  properties:
+    property:
+      name: pattern
+      value: "%d{ISO8601} $p %C{1.} [%t] %m%n"
+  appenders:
+    Console:
+      name: LogToConsole
+      PatternLayout:
+        Pattern: ${pattern}
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        ref: LogToConsole

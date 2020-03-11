@@ -1,0 +1,27 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'io.freefair.lombok' version '4.1.6'
+}
+
+group = 'org.chanwr'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+    implementation 'org.flowable:flowable-dmn-engine:6.5.0'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.2.33'
+    implementation 'com.h2database:h2:1.4.200'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.springframework:spring-test'
+}
